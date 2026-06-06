@@ -1,7 +1,7 @@
 class Solution {
   List<int> leftRightDifference(List<int> nums) {
   int n = nums.length;
-  int a = nums.reduce((a, b) => a + b);
+  int a = nums.reduce((x, y) => x + y);
 
   List<int> b = List.filled(n, 0);
   int c = 0;
