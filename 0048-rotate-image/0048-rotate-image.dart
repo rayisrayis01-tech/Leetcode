@@ -1,13 +1,17 @@
 class Solution {
-  void rotate(List<List<int>> m) {
-     for(int i = 0; i < m.length / 2; i++){
-            for(int j = i; j < m.length - i - 1; j++) {
-                int temp = m[i][j];
-                m[i][j] = m[m.length - 1- j][i];
-                m[m.length - 1- j][i] = m[m.length - 1- i][m.length - 1- j];
-                m[m.length - 1- i][m.length - 1- j] = m[j][m.length - 1- i];
-                m[j][m.length - 1- i] = temp;
-            }
+  void rotate(List<List<int>> matrix) {
+        int length = matrix.length;
+
+    List<List<int>> list = [];
+    for(int i = 0; i < matrix.length; i++){
+        List<int> innerList = [];
+        for(int j = 0; j < matrix.length; j++){
+            innerList.add(matrix[matrix.length-j-1][i]);
         }
+        list.add(innerList);
+    } 
+
+    matrix.clear();
+    matrix.addAll(List.from(list));
   }
 }
